@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Soul's Codex — a deeply personal book for seeing the patterns you live and deciding how you want to work with them.">
+  <title>Soul's Codex — Read the patterns that shape your life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #160c1e;
+      --ink-soft: #25132f;
+      --paper: #f5eff7;
+      --paper-deep: #e9deec;
+      --paper-bright: #fdf9ff;
+      --bronze: #961b99;
+      --bronze-light: #da6ddc;
+      --wine: #7928ca;
+      --sage: #765b87;
+      --muted: #746879;
+      --line: rgba(39, 15, 64, .18);
+      --line-dark: rgba(253, 249, 255, .17);
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 30px 80px rgba(39, 15, 64, .22);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--bronze-light);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow.dark { color: var(--bronze); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: .98; letter-spacing: -.035em; }
+    h1 { max-width: 760px; margin-bottom: 20px; font-size: clamp(54px, 6vw, 88px); }
+    h2 { max-width: 850px; margin-bottom: 28px; font-size: clamp(42px, 5.1vw, 76px); }
+    h3 { font-size: clamp(27px, 3vw, 40px); }
+    .lead { max-width: 670px; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.55; color: rgba(253, 249, 255, .76); }
+    .lead.dark { color: #625669; }
+    .section { padding: clamp(88px, 11vw, 158px) 0; }
+    .dark-section { color: var(--paper-bright); background: var(--ink); }
+
+    .topbar {
+      position: relative;
+      z-index: 5;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .topbar .shell { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { width: 160px; }
+    .top-link { text-decoration: none; color: rgba(255,255,255,.78); font-size: 14px; }
+    .top-link:hover { color: white; }
+
+    .hero {
+      position: relative;
+      min-height: 860px;
+      overflow: hidden;
+      color: var(--paper-bright);
+      background:
+        radial-gradient(circle at 75% 38%, rgba(181, 45, 184, .24), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(121, 40, 202, .22), transparent 34%),
+        #160c1e;
+    }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(218, 109, 220, .2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::before { width: 680px; height: 680px; top: 80px; right: -110px; }
+    .hero::after { width: 520px; height: 520px; top: 160px; right: -30px; }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(350px, .75fr);
+      gap: 34px;
+      align-items: center;
+      padding: 56px 0 82px;
+    }
+    .hero-copy { padding-top: 20px; }
+    .hero-copy h1 em { color: var(--bronze-light); font-style: italic; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; margin: 34px 0 26px; flex-wrap: wrap; }
+    .button {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 25px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { color: var(--ink); background: var(--bronze-light); }
+    .button.primary:hover { background: #ef93f0; }
+    .button.ghost { color: var(--paper-bright); border-color: rgba(255,255,255,.28); }
+    .button.ghost:hover { border-color: rgba(255,255,255,.65); }
+    .microproof { display: flex; gap: 16px; flex-wrap: wrap; color: rgba(255,255,255,.54); font-size: 12px; }
+    .microproof span::before { content: "·"; margin-right: 16px; color: var(--bronze-light); }
+    .microproof span:first-child::before { display: none; }
+
+    .book-stage { position: relative; min-height: 610px; display: grid; place-items: center; perspective: 1500px; }
+    .book-shadow { position: absolute; width: 88%; height: 20%; left: 10%; bottom: 11%; filter: blur(25px); border-radius: 50%; background: rgba(0,0,0,.55); }
+    .book {
+      position: relative;
+      width: min(390px, 82vw);
+      aspect-ratio: .72;
+      transform: rotateY(-15deg) rotateX(3deg) rotateZ(2deg);
+      transform-style: preserve-3d;
+      box-shadow: 28px 32px 56px rgba(0,0,0,.47);
+    }
+    .book::before {
+      content: "";
+      position: absolute;
+      top: 3%; right: -23px; width: 24px; height: 95%;
+      transform: rotateY(72deg); transform-origin: left;
+      background: repeating-linear-gradient(90deg, #d9c8df 0 2px, #f2eaf4 2px 4px);
+    }
+    .book::after {
+      content: "";
+      position: absolute;
+      left: 3%; right: -1%; bottom: -17px; height: 18px;
+      transform: rotateX(76deg); transform-origin: top;
+      background: #bca9c3;
+    }
+    .cover {
+      position: absolute; inset: 0; overflow: hidden;
+      padding: 46px 38px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      border: 1px solid rgba(218, 109, 220, .55);
+      color: #f7dff8;
+      background:
+        radial-gradient(circle at 50% 43%, rgba(181,45,184,.25), transparent 31%),
+        linear-gradient(145deg, #351540, #140a1b 62%, #2b1036);
+    }
+    .cover::before, .cover::after {
+      content: ""; position: absolute; inset: 22px; border: 1px solid rgba(218,109,220,.38); pointer-events: none;
+    }
+    .cover::after { inset: 29px; border-color: rgba(218,109,220,.14); }
+    .cover-mark { position: relative; width: 72px; height: 72px; margin: 70px auto 0; border: 1px solid rgba(218,109,220,.62); border-radius: 50%; }
+    .cover-mark::before, .cover-mark::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(218,109,220,.4); transform: rotate(45deg); }
+    .cover-mark::after { inset: -15px; border-radius: 50%; transform: none; border-color: rgba(218,109,220,.15); }
+    .cover-title { position: relative; text-align: center; }
+    .cover-title strong { display: block; font: 500 49px/1 var(--serif); letter-spacing: -.04em; }
+    .cover-title span { display: block; margin-top: 14px; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; }
+    .cover-name { position: relative; padding-top: 17px; border-top: 1px solid rgba(218,109,220,.28); text-align: center; font: italic 22px/1.2 var(--serif); }
+    .specimen { position: absolute; right: -8px; top: 30px; z-index: 3; padding: 8px 11px; color: #f0caf1; border: 1px solid rgba(218,109,220,.34); background: rgba(22,12,30,.82); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+
+    .fact-ribbon { color: var(--paper-bright); background: var(--ink-soft); border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .fact { min-height: 130px; display: flex; flex-direction: column; justify-content: center; padding: 26px 30px; border-right: 1px solid var(--line-dark); }
+    .fact:first-child { border-left: 1px solid var(--line-dark); }
+    .fact strong { font: 500 32px/1 var(--serif); color: var(--bronze-light); }
+    .fact span { margin-top: 8px; color: rgba(255,255,255,.58); font-size: 12px; }
+
+    .recognition-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; align-items: start; }
+    .recognition-intro { position: sticky; top: 36px; }
+    .recognition-list { border-top: 1px solid var(--line); }
+    .moment { display: grid; grid-template-columns: 54px 1fr; gap: 22px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .moment i { color: var(--bronze); font: italic 24px/1 var(--serif); }
+    .moment p { margin: 0; font: 400 clamp(21px, 2.1vw, 31px)/1.25 var(--serif); }
+    .reframe { margin-top: 38px; padding: 27px 30px; border-top: 1px solid var(--bronze); color: #625669; background: rgba(255,255,255,.4); }
+    .reframe strong { color: var(--ink); }
+
+    .mechanism-head { display: grid; grid-template-columns: 1fr .7fr; gap: 80px; align-items: end; margin-bottom: 72px; }
+    .mechanism-head p { max-width: 540px; color: rgba(255,255,255,.62); }
+    .steps { counter-reset: steps; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-dark); }
+    .step { position: relative; min-height: 330px; padding: 34px 28px 34px 0; border-right: 1px solid var(--line-dark); }
+    .step + .step { padding-left: 28px; }
+    .step::before { counter-increment: steps; content: "0" counter(steps); display: block; margin-bottom: 90px; color: var(--bronze-light); font-size: 11px; letter-spacing: .18em; }
+    .step h3 { margin-bottom: 16px; font-size: 29px; }
+    .step p { color: rgba(255,255,255,.58); font-size: 14px; }
+    .mechanism-note { margin-top: 42px; display: flex; align-items: center; gap: 18px; color: rgba(255,255,255,.64); font: italic 23px/1.3 var(--serif); }
+    .mechanism-note::before { content: ""; width: 70px; height: 1px; background: var(--bronze-light); }
+
+    .preview-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 48px; }
+    .preview-head p { max-width: 410px; color: #716477; }
+    .codex-preview { overflow: hidden; display: grid; grid-template-columns: 240px 1fr; min-height: 620px; border: 1px solid var(--line); background: var(--paper-bright); box-shadow: var(--shadow); }
+    .preview-tabs { padding: 24px 0; color: var(--paper-bright); background: #24102d; }
+    .preview-tabs small { display: block; padding: 0 24px 18px; color: rgba(255,255,255,.38); letter-spacing: .15em; text-transform: uppercase; }
+    .tab-button { width: 100%; min-height: 58px; padding: 0 24px; border: 0; border-left: 2px solid transparent; color: rgba(255,255,255,.58); background: transparent; text-align: left; cursor: pointer; }
+    .tab-button:hover, .tab-button[aria-selected="true"] { color: white; background: rgba(255,255,255,.05); }
+    .tab-button[aria-selected="true"] { border-left-color: var(--bronze-light); }
+    .preview-page { position: relative; padding: clamp(36px, 5vw, 70px); background: linear-gradient(90deg, #eaddec 0, #fdf9ff 5%, #fdf9ff 100%); }
+    .preview-page::before { content: ""; position: absolute; top: 0; bottom: 0; left: 28px; width: 1px; background: rgba(121,40,202,.12); }
+    .folio { color: var(--bronze); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
+    .preview-panel { display: none; animation: reveal .35s ease both; }
+    .preview-panel.active { display: block; }
+    .preview-panel h3 { max-width: 690px; margin: 38px 0 24px; font-size: clamp(38px, 5vw, 65px); }
+    .preview-quote { max-width: 760px; font: 400 clamp(21px, 2.4vw, 30px)/1.38 var(--serif); color: #392c3f; }
+    .application { display: grid; grid-template-columns: 130px 1fr; gap: 22px; max-width: 680px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .application strong { color: var(--bronze); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .application p { color: #685d6d; font-size: 14px; }
+    .sample-label { position: absolute; right: 24px; top: 22px; color: #8a7c90; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(6px); } }
+
+    .library { background: #e8dceb; }
+    .library-head { display: grid; grid-template-columns: 1fr .72fr; gap: 70px; align-items: end; }
+    .library-head p { color: #695d6e; }
+    .domains { margin-top: 58px; border-top: 1px solid rgba(39,15,64,.24); }
+    .domain { display: grid; grid-template-columns: 80px 1fr .8fr; gap: 34px; align-items: center; padding: 27px 0; border-bottom: 1px solid rgba(39,15,64,.18); }
+    .domain .no { color: var(--bronze); font: italic 21px/1 var(--serif); }
+    .domain h3 { margin: 0; font-size: clamp(27px, 3vw, 39px); }
+    .domain p { margin: 0; color: #706476; font-size: 14px; }
+
+    .difference-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; align-items: start; }
+    .difference-list { display: grid; gap: 1px; background: var(--line-dark); }
+    .difference-item { padding: 31px; background: var(--ink); }
+    .difference-item h3 { margin: 0 0 10px; font-size: 29px; color: var(--paper-bright); }
+    .difference-item p { margin: 0; color: rgba(255,255,255,.58); font-size: 14px; }
+    .truth-note { margin-top: 35px; padding: 23px 25px; border: 1px solid var(--line-dark); color: rgba(255,255,255,.62); font-size: 13px; }
+    .truth-note strong { color: var(--bronze-light); }
+
+    .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 54px; background: var(--line); border: 1px solid var(--line); }
+    .use-card { min-height: 300px; padding: 34px; background: var(--paper-bright); }
+    .use-card .time { color: var(--bronze); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; }
+    .use-card h3 { margin: 80px 0 15px; font-size: 30px; }
+    .use-card p { margin: 0; color: #6c6072; font-size: 14px; }
+
+    .offer-wrap { display: grid; grid-template-columns: 1fr 430px; gap: 90px; align-items: center; }
+    .offer-list { margin: 38px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark); }
+    .offer-list li { padding: 17px 0; border-bottom: 1px solid var(--line-dark); color: rgba(255,255,255,.71); }
+    .offer-list li::before { content: "↳"; margin-right: 14px; color: var(--bronze-light); }
+    .offer-card { padding: 38px; color: var(--ink); background: var(--paper-bright); box-shadow: var(--shadow); }
+    .offer-card small { color: var(--bronze); letter-spacing: .14em; text-transform: uppercase; }
+    .price { margin: 24px 0 7px; font: 500 58px/1 var(--serif); }
+    .price-note { color: #796d7f; font-size: 13px; }
+    .offer-card .button { width: 100%; margin-top: 27px; color: white; background: var(--ink); }
+    .offer-card .button:hover { background: #3a1748; }
+    .offer-meta { display: grid; gap: 9px; margin-top: 25px; color: #695d6f; font-size: 12px; }
+    .offer-meta span::before { content: "✓"; margin-right: 9px; color: var(--sage); }
+    .offer-disclaimer { margin: 24px 0 0; padding-top: 18px; border-top: 1px solid var(--line); color: #887b8e; font-size: 10px; line-height: 1.55; }
+
+    .faq-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: 90px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { position: relative; padding: 24px 52px 24px 0; cursor: pointer; list-style: none; font: 500 23px/1.25 var(--serif); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 8px; top: 21px; color: var(--bronze); font: 400 27px/1 var(--sans); }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 690px; padding: 0 40px 24px 0; color: #706476; font-size: 14px; }
+
+    .close { position: relative; overflow: hidden; text-align: center; }
+    .close::before { content: ""; position: absolute; width: 520px; height: 520px; left: 50%; top: 48%; transform: translate(-50%,-50%); border: 1px solid rgba(218,109,220,.18); border-radius: 50%; box-shadow: 0 0 0 90px rgba(181,45,184,.045), 0 0 0 180px rgba(121,40,202,.025); }
+    .close .shell { position: relative; z-index: 1; }
+    .close h2 { margin-left: auto; margin-right: auto; }
+    .close p { max-width: 590px; margin: 0 auto 34px; color: rgba(255,255,255,.61); }
+    .close-sign { margin-top: 80px; color: rgba(255,255,255,.35); font: italic 20px/1 var(--serif); }
+    footer { padding: 27px 0; border-top: 1px solid var(--line-dark); color: rgba(255,255,255,.4); background: var(--ink); font-size: 11px; }
+    footer .shell { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
+
+    .mobile-cta { display: none; }
+    :focus-visible { outline: 2px solid var(--bronze-light); outline-offset: 4px; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .recognition-grid, .mechanism-head, .library-head, .difference-grid, .offer-wrap, .faq-grid { grid-template-columns: 1fr; }
+      .hero-grid { padding-top: 58px; }
+      .hero { min-height: auto; }
+      .hero-copy { text-align: left; }
+      .book-stage { min-height: 560px; }
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .fact:nth-child(3) { border-left: 1px solid var(--line-dark); }
+      .recognition-intro { position: static; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .step:nth-child(2) { border-right: 0; }
+      .step:nth-child(3), .step:nth-child(4) { border-top: 1px solid var(--line-dark); }
+      .codex-preview { grid-template-columns: 1fr; }
+      .preview-tabs { display: flex; overflow-x: auto; padding: 0; }
+      .preview-tabs small { display: none; }
+      .tab-button { min-width: max-content; width: auto; padding: 0 18px; border-left: 0; border-bottom: 2px solid transparent; }
+      .tab-button[aria-selected="true"] { border-left-color: transparent; border-bottom-color: var(--bronze-light); }
+      .domain { grid-template-columns: 50px 1fr; }
+      .domain p { grid-column: 2; }
+      .use-grid { grid-template-columns: 1fr; }
+      .use-card { min-height: 230px; }
+      .use-card h3 { margin-top: 50px; }
+      .offer-card { max-width: 520px; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 28px, 1180px); }
+      .topbar { padding: 17px 0; }
+      .brand { width: 135px; }
+      .top-link { display: none; }
+      .hero-grid { gap: 18px; padding-bottom: 70px; }
+      h1 { font-size: clamp(49px, 14.5vw, 70px); }
+      h2 { font-size: clamp(39px, 12vw, 57px); }
+      .lead { font-size: 17px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .microproof { gap: 8px 15px; }
+      .microproof span::before { display: none; }
+      .book-stage { min-height: 500px; }
+      .book { width: min(325px, 79vw); }
+      .cover { padding: 38px 30px 34px; }
+      .cover-mark { margin-top: 53px; }
+      .cover-title strong { font-size: 42px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .fact { min-height: 115px; padding: 21px 18px; }
+      .fact strong { font-size: 26px; }
+      .section { padding: 78px 0; }
+      .moment { grid-template-columns: 34px 1fr; gap: 13px; }
+      .steps { grid-template-columns: 1fr; }
+      .step, .step + .step { min-height: auto; padding: 28px 0; border-right: 0; border-top: 1px solid var(--line-dark); }
+      .step::before { margin-bottom: 45px; }
+      .preview-head { align-items: start; flex-direction: column; }
+      .preview-page { min-height: 575px; padding: 45px 28px 36px; }
+      .preview-page::before { left: 14px; }
+      .preview-panel h3 { margin-top: 35px; }
+      .application { grid-template-columns: 1fr; }
+      .domain { gap: 18px; padding: 23px 0; }
+      .domain p { font-size: 13px; }
+      .offer-card { padding: 28px; }
+      .mobile-cta {
+        position: fixed; z-index: 20; left: 10px; right: 10px; bottom: 10px;
+        min-height: 52px; display: flex; align-items: center; justify-content: space-between;
+        padding: 0 18px; color: var(--ink); background: var(--bronze-light);
+        text-decoration: none; box-shadow: 0 10px 35px rgba(0,0,0,.35); font-size: 13px; font-weight: 600;
+        opacity: 0; pointer-events: none; transform: translateY(130%);
+        transition: opacity .2s ease, transform .2s ease;
+      }
+      .mobile-cta.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .mobile-cta strong { font-family: var(--serif); font-size: 20px; }
+      footer { padding-bottom: 84px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="topbar" aria-label="Primary navigation">
+      <div class="shell">
+        <a href="#top" aria-label="Soul's Codex home"><img class="brand" src="assets/logo-white.png" alt="Soul's Codex"></a>
+        <a class="top-link" href="#inside">Explore what is inside ↓</a>
+      </div>
+    </nav>
+
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">A personal book created from your name &amp; birth details</p>
+        <h1>See the patterns you live. <em>Choose what comes next.</em></h1>
+        <p class="lead">Soul’s Codex brings seven symbolic traditions into one deeply personal guide—so you can recognize the themes behind how you decide, relate, create, recover, and grow.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#offer">Create my Soul’s Codex <span aria-hidden="true">→</span></a>
+          <a class="button ghost" href="#inside">Read a sample</a>
+        </div>
+        <div class="microproof" aria-label="Product facts">
+          <span>38 personalized readings</span>
+          <span>Approximately 180 pages</span>
+          <span>One-time purchase</span>
+        </div>
+      </div>
+
+      <div class="book-stage" aria-label="Sample personalized Soul's Codex book cover">
+        <div class="book-shadow"></div>
+        <span class="specimen">Personalized for you</span>
+        <div class="book">
+          <div class="cover">
+            <div class="cover-mark" aria-hidden="true"></div>
+            <div class="cover-title"><strong>Soul’s<br>Codex</strong><span>A personal pattern map</span></div>
+            <div class="cover-name">The Codex of Your Name</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="fact-ribbon" aria-label="Soul's Codex scope">
+    <div class="shell facts">
+      <div class="fact"><strong>38</strong><span>personalized interpretations</span></div>
+      <div class="fact"><strong>7</strong><span>symbolic systems in one book</span></div>
+      <div class="fact"><strong>54k+</strong><span>words of context and guidance</span></div>
+      <div class="fact"><strong>1</strong><span>book addressed to you</span></div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="recognition">
+      <div class="shell recognition-grid">
+        <div class="recognition-intro">
+          <p class="eyebrow dark">The feeling beneath the question</p>
+          <h2>Different moment.<br>Same pattern.</h2>
+          <p class="lead dark">You do not need another label. You need language for what keeps returning—and a way to meet it more consciously.</p>
+        </div>
+        <div>
+          <div class="recognition-list">
+            <div class="moment"><i>01</i><p>You change the situation, but somehow arrive at the same emotional place.</p></div>
+            <div class="moment"><i>02</i><p>You can carry enormous responsibility—until your own needs disappear beneath it.</p></div>
+            <div class="moment"><i>03</i><p>You sense the right direction, then lose it in overthinking, obligation, or the need to get it perfect.</p></div>
+            <div class="moment"><i>04</i><p>You know there is more in you, but you cannot yet see how your strengths and tensions fit together.</p></div>
+          </div>
+          <div class="reframe"><strong>The problem may not be a lack of self-knowledge.</strong> It may be that the pieces have never been gathered into one place.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="method">
+      <div class="shell">
+        <div class="mechanism-head">
+          <div><p class="eyebrow">The Soul’s Codex method</p><h2>Many lenses.<br>One personal pattern map.</h2></div>
+          <p>Most readings stop at one number, one sign, or one archetype. Soul’s Codex looks across several symbolic systems, notices what recurs, and translates those themes into questions and practices you can test in your own life.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Your coordinates</h3><p>Your name, date, time and place of birth—along with reflective inputs—form the starting point.</p></article>
+          <article class="step"><h3>Seven lenses</h3><p>Numerology, astrology, Ba Zi, elements, colors, crystals and numerical practices explore different dimensions.</p></article>
+          <article class="step"><h3>Recurring themes</h3><p>The Codex brings related insights together: inner needs, outward style, strengths, tensions, pressure patterns and renewal.</p></article>
+          <article class="step"><h3>Daily application</h3><p>Each interpretation moves toward reflection prompts, boundaries, routines, experiments or a practical next step.</p></article>
+        </div>
+        <div class="mechanism-note">Insight matters when it changes the way you meet an ordinary day.</div>
+      </div>
+    </section>
+
+    <section class="section" id="inside">
+      <div class="shell">
+        <div class="preview-head">
+          <div><p class="eyebrow dark">Inside a Soul’s Codex</p><h2>Not just what a symbol means.<br>What it may mean for you.</h2></div>
+          <p>Explore how the book moves from interpretation to recognizable patterns and practical reflection. The excerpts below illustrate the structure of a sample Codex.</p>
+        </div>
+
+        <div class="codex-preview">
+          <div class="preview-tabs" role="tablist" aria-label="Sample Codex sections">
+            <small>Choose a page</small>
+            <button class="tab-button" role="tab" aria-selected="true" aria-controls="panel-direction" id="tab-direction">Direction</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-inner" id="tab-inner">Inner world</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-pressure" id="tab-pressure">Under pressure</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-create" id="tab-create">Work &amp; creativity</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-integrate" id="tab-integrate">Integration</button>
+          </div>
+          <div class="preview-page">
+            <span class="sample-label">Anonymized sample structure</span>
+            <article class="preview-panel active" id="panel-direction" role="tabpanel" aria-labelledby="tab-direction">
+              <span class="folio">Life Path · Direction</span>
+              <h3>The path your life follows</h3>
+              <p class="preview-quote">Your reading explores how you naturally initiate, decide and move forward—then shows where that same drive can become isolation, haste or responsibility carried alone.</p>
+              <div class="application"><strong>In practice</strong><p>Translate ambition into the next smallest action. Make autonomy explicit. Ask for help before responsibility becomes silent weight.</p></div>
+            </article>
+            <article class="preview-panel" id="panel-inner" role="tabpanel" aria-labelledby="tab-inner" hidden>
+              <span class="folio">Soul Number · Inner needs</span>
+              <h3>Your private definition of “enough”</h3>
+              <p class="preview-quote">The Codex distinguishes who you appear to be from what you need inwardly—revealing the conditions that restore your sense of agency, meaning and emotional wholeness.</p>
+              <div class="application"><strong>In practice</strong><p>Protect uninterrupted time for what nourishes you. Name the freedom, reassurance or recognition you need instead of hoping others will infer it.</p></div>
+            </article>
+            <article class="preview-panel" id="panel-pressure" role="tabpanel" aria-labelledby="tab-pressure" hidden>
+              <span class="folio">Power &amp; Balance · Stress response</span>
+              <h3>The quiet reserve you draw on</h3>
+              <p class="preview-quote">Your strengths do not disappear under pressure. They change shape. The reading helps you notice the instinct that takes over—and where it protects or limits you.</p>
+              <div class="application"><strong>In practice</strong><p>Use a short pause before acting. Separate what truly needs your ownership from what can be shared, simplified or released.</p></div>
+            </article>
+            <article class="preview-panel" id="panel-create" role="tabpanel" aria-labelledby="tab-create" hidden>
+              <span class="folio">Expression · Work &amp; creativity</span>
+              <h3>How inspiration takes durable form</h3>
+              <p class="preview-quote">See the environments in which your ideas become tangible—and the habits that protect creativity from perfectionism, distraction, overcommitment or burnout.</p>
+              <div class="application"><strong>In practice</strong><p>Give intuition a method: smaller experiments, visible checkpoints, protected making time and clear criteria for completion.</p></div>
+            </article>
+            <article class="preview-panel" id="panel-integrate" role="tabpanel" aria-labelledby="tab-integrate" hidden>
+              <span class="folio">Bridges · Practical integration</span>
+              <h3>From potential to lived choice</h3>
+              <p class="preview-quote">The most useful insight is not another trait. It is the bridge between what you recognize inwardly and what you repeatedly do in the world.</p>
+              <div class="application"><strong>In practice</strong><p>Choose one micro-adjustment to test. Observe the result. Keep what proves useful and release what does not.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section library" id="contents">
+      <div class="shell">
+        <div class="library-head">
+          <div><p class="eyebrow dark">The library inside</p><h2>Seven systems.<br>Thirty-eight personal readings.</h2></div>
+          <p>Soul’s Codex is not a stack of disconnected mini-readings. Each lens adds another angle to the same question: how do your inner drives, outward choices and recurring tensions fit together?</p>
+        </div>
+        <div class="domains">
+          <article class="domain"><span class="no">01</span><h3>Numerology</h3><p>Fifteen dimensions—from Life Path and Soul Number to cycles, bridges, inner dreams and the vibration of your name.</p></article>
+          <article class="domain"><span class="no">02</span><h3>Astrology</h3><p>Your natal pattern, emotional needs, outward approach, houses, planetary influences and the tensions that ask for integration.</p></article>
+          <article class="domain"><span class="no">03</span><h3>Ba Zi</h3><p>Your Four Pillars, Day Master, Chinese zodiac archetype and a symbolic map of strength, pressure and renewal.</p></article>
+          <article class="domain"><span class="no">04</span><h3>Elements of nature</h3><p>Fire, Water, Earth and Air as a second reflective lens for action, emotion, stability, thought and communication.</p></article>
+          <article class="domain"><span class="no">05</span><h3>Colors</h3><p>A personal guiding color and supporting palette used as practical cues for focus, recovery, communication and boundaries.</p></article>
+          <article class="domain"><span class="no">06</span><h3>Crystals</h3><p>A primary and supporting selection, paired with intention-setting, reflection prompts and a simple personal ritual.</p></article>
+          <article class="domain"><span class="no">07</span><h3>Numerical practices</h3><p>Personal sequences presented as attention cues for purpose, discipline and values—not as substitutes for action.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="difference">
+      <div class="shell difference-grid">
+        <div>
+          <p class="eyebrow">Why it feels different</p>
+          <h2>A book to question, mark and return to.</h2>
+          <p class="lead">You are not asked to accept every line as fact. You are invited to notice, test and decide what becomes useful in lived experience.</p>
+          <div class="truth-note"><strong>Clear by design:</strong> Soul’s Codex is a symbolic self-reflection guide. It is not prophecy, diagnosis or a replacement for your judgment.</div>
+        </div>
+        <div class="difference-list">
+          <article class="difference-item"><h3>It connects the pieces</h3><p>Separate systems become more useful when their themes can be seen beside one another.</p></article>
+          <article class="difference-item"><h3>It translates insight into practice</h3><p>The personal passages move toward routines, prompts, boundaries, experiments and choices you can actually try.</p></article>
+          <article class="difference-item"><h3>It leaves room for doubt</h3><p>Skepticism is welcome. Read, observe and keep only what helps you see more clearly.</p></article>
+          <article class="difference-item"><h3>It changes as you do</h3><p>A passage about work, relationships or rest can reveal something different when you return during a new season of life.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="use">
+      <div class="shell">
+        <p class="eyebrow dark">A companion, not a verdict</p>
+        <h2>Open it when life asks a better question.</h2>
+        <div class="use-grid">
+          <article class="use-card"><span class="time">At a crossroads</span><h3>When you need direction</h3><p>Return to the sections on decision style, inner needs and recurring tensions. Notice which choice comes from clarity—and which comes from habit.</p></article>
+          <article class="use-card"><span class="time">In the middle of a pattern</span><h3>When something repeats</h3><p>Use the Codex as a vocabulary for the moment. Name the strength, shadow and adjustment before reacting automatically.</p></article>
+          <article class="use-card"><span class="time">In a new season</span><h3>When you have changed</h3><p>Revisit the same pages with different experience. The words stay still; what you can recognize in them does not.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="offer">
+      <div class="shell offer-wrap">
+        <div>
+          <p class="eyebrow">Your personal Codex</p>
+          <h2>One book.<br>A deeper language for your inner life.</h2>
+          <p class="lead">Created from your personal details and designed to help you recognize patterns, reflect more precisely and choose your next step with greater awareness.</p>
+          <ul class="offer-list">
+            <li>Approximately 180 pages in a personalized digital book</li>
+            <li>38 individualized interpretations across seven systems</li>
+            <li>Shared context that explains each symbolic lens</li>
+            <li>Practical prompts for work, relationships, decisions and rest</li>
+            <li>Personal color, crystal and numerical reflection practices</li>
+          </ul>
+        </div>
+        <aside class="offer-card" aria-label="Purchase Soul's Codex">
+          <small>One-time purchase</small>
+          <div class="price">$49.90</div>
+          <div class="price-note">No subscription.</div>
+          <a class="button" href="https://soulscodex.com/products/souls-codex">Create my Soul’s Codex <span aria-hidden="true">→</span></a>
+          <div class="offer-meta">
+            <span>Personalized with your information</span>
+            <span>Digital product</span>
+            <span>Designed to revisit over time</span>
+          </div>
+          <p class="offer-disclaimer">For personal reflection and educational purposes. Soul’s Codex does not predict future events and is not medical, psychological, legal or financial advice.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="shell faq-grid">
+        <div><p class="eyebrow dark">Questions before you begin</p><h2>Read this with your eyes open.</h2></div>
+        <div class="faq-list">
+          <details><summary>How personal is Soul’s Codex?</summary><p>The book combines shared explanations of each symbolic system with 38 interpretations generated around your name, birth details and reflective inputs. It is personalized, but not every educational page is uniquely written for one reader.</p></details>
+          <details><summary>Is this fortune-telling?</summary><p>No. Soul’s Codex is designed as a symbolic framework for reflection. It explores themes and possible expressions; it does not predict fixed events or remove your freedom to choose.</p></details>
+          <details><summary>What if I am skeptical?</summary><p>Bring the doubt with you. The book itself encourages you to read, observe and test ideas against lived experience. You do not need to accept every interpretation for the process to be useful.</p></details>
+          <details><summary>What information is used?</summary><p>Your name, date, time and place of birth form the central inputs. The current book also draws on personal answers used to shape practical context.</p></details>
+          <details><summary>Is this professional advice?</summary><p>No. The interpretations are symbolic and educational. They are not a substitute for medical, psychological, legal, financial or other professional advice.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section close">
+      <div class="shell">
+        <p class="eyebrow">The journey continues within</p>
+        <h2>The map is yours.<br>The path is lived.</h2>
+        <p>Soul’s Codex does not tell you who you must be. It offers several ways to look at who you are, notice what repeats, and decide what deserves your attention next.</p>
+        <a class="button primary" href="#offer">Open my Soul’s Codex <span aria-hidden="true">→</span></a>
+        <div class="close-sign">Time does not erase your code. It reveals it.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell"><span>© Soul’s Codex</span><span>Personal reflection · Symbolic interpretation · Your judgment remains your own</span></div>
+  </footer>
+
+  <a class="mobile-cta" href="#offer"><span>Create my Codex</span><strong>$49.90</strong></a>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+    function activateTab(tab) {
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach((panel) => {
+        const selected = panel.id === tab.getAttribute('aria-controls');
+        panel.hidden = !selected;
+        panel.classList.toggle('active', selected);
+      });
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        let nextIndex = index;
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+        activateTab(tabs[nextIndex]);
+        tabs[nextIndex].focus();
+      });
+    });
+
+    const mobileCta = document.querySelector('.mobile-cta');
+    const hero = document.querySelector('.hero');
+    if ('IntersectionObserver' in window && mobileCta && hero) {
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        mobileCta.classList.toggle('visible', !entry.isIntersecting);
+      }, { threshold: 0.08 });
+      heroObserver.observe(hero);
+    }
+  </script>
+</body>
+</html>
