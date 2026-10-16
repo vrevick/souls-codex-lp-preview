@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Why isolated readings leave the bigger question unanswered, and how Soul's Codex brings seven symbolic systems into one personal pattern map.">
-  <title>Why one reading is never the whole story | Soul's Codex</title>
+  <meta name="description" content="Most personal readings show you one piece. Soul's Codex brings seven symbolic systems into one personalized book so you can see the larger pattern.">
+  <title>The problem with one-piece readings | Soul's Codex</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
@@ -327,6 +327,27 @@
     .decision-close .quiz-content h2 { max-width: 820px; }
     .decision-close .quiz-content p { max-width: 690px; margin-left: 0; }
     .decision-close .button { margin-top: 10px; }
+    .hero-proof { margin-top: 28px; padding: 20px 0 0; border-top: 1px solid rgba(255,255,255,.14); }
+    .hero-proof blockquote { margin: 0; color: rgba(255,255,255,.82); font: italic 18px/1.4 var(--serif); }
+    .hero-proof cite { display: block; margin-top: 9px; color: rgba(255,255,255,.46); font: 500 10px var(--sans); font-style: normal; letter-spacing: .08em; text-transform: uppercase; }
+    .letter-salutation { margin-bottom: 24px; color: var(--ink); font: italic 28px var(--serif); }
+    .inline-review { margin: 50px 0; padding: 32px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .inline-review blockquote { margin: 0; color: #2f2433; font: italic 29px/1.25 var(--serif); }
+    .inline-review footer { padding: 16px 0 0; border: 0; color: var(--muted); background: transparent; font: 600 10px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    .comparison { overflow: hidden; margin-top: 42px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    .comparison-row { display: grid; grid-template-columns: 1fr 1fr; }
+    .comparison-row > div { padding: 18px 14px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .comparison-row > div + div { border-left: 1px solid var(--line); color: #392d3f; background: #f6f1f7; }
+    .comparison-row:first-child > div { color: white; background: #1a0d29; font-weight: 600; }
+    .comparison-row:last-child > div { border-bottom: 0; }
+    .value-stack { display: grid; gap: 1px; margin-top: 40px; border: 1px solid var(--line); background: var(--line); }
+    .value-item { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 24px 20px; background: white; }
+    .value-item > span { color: var(--magenta); font: italic 19px var(--serif); }
+    .value-item h3 { margin: 0 0 5px; font-size: 25px; }
+    .value-item p { margin: 0; color: var(--muted); font-size: 13px; }
+    .sales-letter main .section-title { max-width: 900px; }
+    .sales-letter .ps { margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.7); font: italic 17px/1.5 var(--serif); }
+    .sales-letter .ps strong { color: white; }
 
     @media (min-width: 760px) {
       .shell { width: min(100% - 64px,1120px); }
@@ -367,6 +388,8 @@
       .fit-grid { grid-template-columns: 1fr 1fr; }
       .system-row { min-height: 158px; padding: 28px 25px; }
       .inline-cta { padding: 42px; }
+      .value-stack { grid-template-columns: 1fr 1fr; }
+      .hero-proof { max-width: 620px; }
       .footer-row { flex-direction: row; justify-content: space-between; gap: 25px; }
       footer { padding-bottom: 30px; }
       .mobile-cta { display: none; }
@@ -379,7 +402,7 @@
     }
   </style>
 </head>
-<body>
+<body class="sales-letter">
   <header class="hero" id="top">
     <div class="stars" aria-hidden="true"></div>
     <nav class="nav" aria-label="Main navigation">
@@ -391,20 +414,20 @@
 
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">A personal book for seeing what keeps repeating</p>
-        <h1>What if the pieces finally <em>made sense together?</em></h1>
-        <p class="hero-lead">You may already know your star sign, a meaningful number or a personality label that feels familiar. Soul's Codex gathers seven symbolic systems into one personal book, so you can look beyond isolated descriptions and start seeing the larger pattern.</p>
+        <p class="eyebrow">For anyone who knows the pieces but still cannot see the pattern</p>
+        <h1>You have been given the pieces. <em>No one showed you how they fit.</em></h1>
+        <p class="hero-lead">Soul's Codex brings astrology, numerology, Ba Zi and four more symbolic systems into one personalized book of about 180 pages. Instead of another isolated description, you get a wider view of what keeps repeating across your choices, relationships and inner life.</p>
         <div class="hero-actions">
           <a class="button" href="https://soulscodex.com/products/souls-codex">Start my reflection quiz <span aria-hidden="true">→</span></a>
-          <a class="sub-link button-line" href="#story">Read the full story</a>
+          <a class="sub-link button-line" href="#story">Why one reading is not enough</a>
         </div>
-        <p class="cta-note">Your answers help shape 38 personal interpretations.</p>
+        <p class="cta-note">Begin with your birth details and a few reflective answers.</p>
         <div class="facts" aria-label="Book facts">
           <div class="fact"><strong>180</strong><span>approximate pages</span></div>
           <div class="fact"><strong>38</strong><span>personal interpretations</span></div>
           <div class="fact"><strong>7</strong><span>symbolic systems</span></div>
         </div>
-        <div class="byline"><span class="byline-mark">SC</span><span>An editorial introduction to Soul's Codex<br>About 8 minutes to read</span></div>
+        <div class="hero-proof"><blockquote>"When I opened my Soul's Codex, I literally stopped. It felt like someone was seeing through me for the first time in my life. Some chapters were so precise that I cried from relief. I wish I had this book ten years ago."</blockquote><cite>Emily Carter · Verified Buyer</cite></div>
       </div>
 
       <div class="book-stage" aria-label="Official Soul's Codex cover">
@@ -424,27 +447,41 @@
   <main>
     <section class="section long-read" id="story">
       <article class="editorial-shell editorial-copy reveal">
-        <p class="reading-note">The problem with collecting isolated insights</p>
-        <h2>A description can feel true and still leave the important question unanswered.</h2>
-        <p>Perhaps an astrology reading captured your emotional world but said little about the choices you make under pressure.</p>
-        <p>Maybe a numerology profile named one of your strengths without showing why that same strength can become tiring. Or a personality test gave you a neat label that felt right for a week, then became one more screenshot saved on your phone.</p>
-        <p>You recognize yourself in parts. Yet the larger pattern remains difficult to name.</p>
+        <p class="reading-note">A personal letter about the readings that almost make sense</p>
+        <p class="letter-salutation">Dear reader,</p>
+        <h2>The frustrating part is not that personal readings say nothing. It is that each one stops too soon.</h2>
+        <p>You read your horoscope and recognize the emotional part immediately. Then the paragraph ends before it explains why the same feeling keeps appearing in completely different situations.</p>
+        <p>A numerology profile names a strength you have always carried. It sounds accurate. What it does not show is how that strength can turn into pressure, overthinking or the habit of taking responsibility for everyone in the room.</p>
+        <p>A personality label gives the pattern a name. You save it, think about it for a few days and eventually file it beside all the other descriptions that felt true but never quite became useful.</p>
+        <p>None of those readings has to be wrong. They are simply looking through one window.</p>
+        <p>And you are left trying to assemble the whole house.</p>
         <div class="question-list" aria-label="Questions readers often return to">
           <p>Why do different situations lead to the same emotional ending?</p>
           <p>Why do I take responsibility so quickly, even when nobody asked me to?</p>
           <p>Why does a clear decision become tangled in doubt?</p>
           <p>Why do certain seasons bring the same need for change?</p>
         </div>
-        <p>These questions do not need another label. They need context.</p>
-        <blockquote class="pullquote">The value is not in being told who you are. It is in seeing enough of the pattern to decide what you want to do with it.</blockquote>
-        <h2>A whole person will never fit inside a single sign.</h2>
-        <p>A single symbolic system can offer an interesting point of view. The limitation appears when that point of view has to carry the weight of your entire story.</p>
-        <p>Soul's Codex takes a different approach. It places several traditions side by side, then organizes their interpretations around themes you can recognize in ordinary life: your needs, the roles you assume, the tensions you revisit and the conditions that help you regain perspective.</p>
-        <p>The goal is not to force seven systems to say the same thing. Each has its own method and language. The value comes from comparing those views, noticing related themes and thinking more carefully about the differences.</p>
-        <p>Instead of another reading that disappears into a folder, you receive a personal reference you can explore as a whole and revisit as your life changes.</p>
+        <p>Those questions need more than another label. They need context.</p>
+        <blockquote class="pullquote">The useful moment is not being told who you are. It is seeing enough of the pattern to decide what you want to do with it.</blockquote>
+        <h2>Most readings give you an answer. Soul's Codex gives you something to compare it with.</h2>
+        <p>A single symbolic system can offer an interesting point of view. The limitation appears when that one point of view has to carry the weight of your entire story.</p>
+        <p>Soul's Codex places seven traditions side by side and organizes their interpretations around themes you can recognize in ordinary life: your emotional needs, the way you express yourself, the roles you assume, the tensions you revisit and the conditions that help you regain perspective.</p>
+        <p>The systems are not forced to agree. Astrology, numerology and Ba Zi do not use the same inputs or speak the same language. Their differences matter. Comparing those differences can be just as useful as noticing a theme that appears more than once.</p>
+        <div class="comparison" aria-label="Comparison between a typical single reading and Soul's Codex">
+          <div class="comparison-row"><div>A typical single reading</div><div>Your Soul's Codex</div></div>
+          <div class="comparison-row"><div>One symbolic vocabulary</div><div>Seven distinct symbolic systems</div></div>
+          <div class="comparison-row"><div>A short isolated result</div><div>About 180 pages of connected context</div></div>
+          <div class="comparison-row"><div>One description to accept or reject</div><div>38 personal interpretations to compare</div></div>
+          <div class="comparison-row"><div>Read once, then forgotten</div><div>A reference you can return to</div></div>
+        </div>
+        <div class="inline-review">
+          <blockquote>"Every page hit the core. This is not a horoscope—this is a mirror. After reading it, I feel like I know myself better than ever before. Truly transformative."</blockquote>
+          <footer>Daniel Hayes · Verified Buyer · October 17, 2024</footer>
+        </div>
+        <p>The point is not to hand your judgment over to a book. The point is to put the pieces in one place, where you can finally examine the larger picture for yourself.</p>
         <div class="inline-cta">
-          <p>Share your birth details and a few reflective answers to begin your personal Codex.</p>
-          <a class="button" href="https://soulscodex.com/products/souls-codex">Start my reflection quiz <span aria-hidden="true">→</span></a>
+          <p>See what your personal Codex would be built from. Begin with your birth details and a few reflective answers.</p>
+          <a class="button" href="https://soulscodex.com/products/souls-codex">Start with my details <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </section>
@@ -461,9 +498,9 @@
           </svg>
         </div>
         <div class="atlas-copy reveal">
-          <p class="eyebrow">Seven lenses, one personal reference</p>
-          <h2>Scattered interpretations become a pattern map you can use.</h2>
-          <p class="mechanism-intro">Each tradition offers a different symbolic vocabulary. Soul's Codex gathers all seven so you can notice where themes relate, where they differ and which questions deserve a closer look.</p>
+          <p class="eyebrow">The difference is what happens between the readings</p>
+          <h2>No single system gets the final word.</h2>
+          <p class="mechanism-intro">Each tradition offers a different symbolic vocabulary. Soul's Codex gathers all seven so you can compare their perspectives, notice related themes and decide which questions deserve a closer look.</p>
           <div class="systems-ledger">
             <div class="system-row"><span>01</span><div><h3>Numerology</h3><p>Interpretations connected to your name, numbers, cycles and recurring themes.</p></div></div>
             <div class="system-row"><span>02</span><div><h3>Astrology</h3><p>A symbolic view of emotional needs, outward expression and tensions in your natal pattern.</p></div></div>
@@ -481,9 +518,9 @@
     <section class="section" id="recognition">
       <div class="shell">
         <div class="recognition-head reveal">
-          <p class="eyebrow">Where your patterns become visible</p>
-          <h2 class="section-title">The insight matters when you can recognize it in your own life.</h2>
-          <p class="section-intro">Your Codex brings familiar moments into focus, helping you understand what may be happening beneath the reaction.</p>
+          <p class="eyebrow">This is where the reading stops being abstract</p>
+          <h2 class="section-title">A pattern becomes useful when you catch it happening in real life.</h2>
+          <p class="section-intro">The aim is not a prettier description of your personality. It is a clearer way to look at the moments you keep living.</p>
         </div>
         <div class="moments">
           <article class="moment reveal"><div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg></div><small>When the pattern repeats</small><h3>Different situation. Same emotional ending.</h3><p>Recognize the tension and instinctive response that keep leading you back to a familiar place.</p></article>
@@ -528,15 +565,17 @@
     <section class="section" id="scope">
       <div class="shell">
         <div class="reveal">
-          <p class="eyebrow">Substantial enough to revisit</p>
-          <h2 class="section-title">Each perspective gets room to breathe.</h2>
-          <p class="section-intro">Soul's Codex combines shared explanations with interpretations shaped by your information. Some pages may feel relevant immediately. Others may become useful when you meet a different season of life.</p>
+          <p class="eyebrow">What your personal Codex includes</p>
+          <h2 class="section-title">This is not a result you glance at once and forget.</h2>
+          <p class="section-intro">The book gives every perspective enough room to explain itself, then gives you ways to connect the interpretation with your own experience.</p>
         </div>
-        <div class="scope-grid">
-          <article class="scope-card reveal"><strong>≈180</strong><h3>Pages, not a result card</h3><p>The book gives seven traditions enough space to explain their language before asking you to reflect on your personal interpretation.</p></article>
-          <article class="scope-card reveal"><strong>38</strong><h3>Personal interpretations</h3><p>Your name, birth details and reflective answers shape the personal readings placed throughout the book.</p></article>
-          <article class="scope-card reveal"><strong>1</strong><h3>Reference to keep</h3><p>Return to one chapter when a question resurfaces, then compare it with another lens when you want more context.</p></article>
+        <div class="value-stack reveal">
+          <article class="value-item"><span>01</span><div><h3>Your personal digital book</h3><p>Approximately 180 pages, created as one reference rather than a collection of disconnected results.</p></div></article>
+          <article class="value-item"><span>02</span><div><h3>Seven symbolic systems</h3><p>Astrology, numerology, Ba Zi, four-element symbolism, colors, crystals and numerical practices.</p></div></article>
+          <article class="value-item"><span>03</span><div><h3>38 personal interpretations</h3><p>Readings shaped by your name, birth details and the reflective answers you provide.</p></div></article>
+          <article class="value-item"><span>04</span><div><h3>Questions you can use</h3><p>Reflection prompts that help you test an interpretation against the life you have actually lived.</p></div></article>
         </div>
+        <div class="inline-cta reveal"><p>You do not need to know all seven systems. You only need the details that make the reading yours.</p><a class="button" href="https://soulscodex.com/products/souls-codex">Build my personal Codex <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -621,6 +660,7 @@
           </div>
         </div>
         <div class="testimonial-controls reveal"><span class="slider-status" id="slider-status">1 of 10</span><div class="slider-buttons"><button class="slider-button" id="review-prev" type="button" aria-label="Previous testimonial">←</button><button class="slider-button" id="review-next" type="button" aria-label="Next testimonial">→</button></div></div>
+        <div class="inline-cta reveal"><p>If their words sound familiar, the next useful reading may be your own.</p><a class="button" href="https://soulscodex.com/products/souls-codex">Begin my personal reading <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -686,13 +726,14 @@
 
     <section class="section dark quiz-panel decision-close" id="final-quiz">
       <div class="shell quiz-content reveal">
-        <p class="eyebrow">The next chapter is still yours to write</p>
-        <h2>You may already know the pieces. Your Codex helps you see how they sit together.</h2>
-        <p>The patterns shaping a life rarely arrive in one dramatic moment. They show up in the responsibility you take on, the conversations you avoid, the standards you set and the questions that keep returning.</p>
-        <p>Soul's Codex gives you one personal place to examine those patterns through seven symbolic traditions and 38 interpretations. It will not tell you who you must become. It offers language for what you notice and questions for what you do not yet understand.</p>
-        <p>You remain the author of the next choice.</p>
+        <p class="eyebrow">One decision before you close this page</p>
+        <h2>You can keep collecting pieces. Or you can finally put them in one place.</h2>
+        <p>The patterns shaping your life rarely arrive in one dramatic moment. They show up in the responsibility you take on, the conversations you avoid, the standards you set and the questions that keep returning.</p>
+        <p>Soul's Codex gives you one personal place to examine those patterns through seven symbolic traditions and 38 interpretations. The book cannot make the next choice for you. It can help you notice what deserves consideration before you make it.</p>
+        <p>You remain the author. The Codex gives you a wider page.</p>
         <a class="button" href="https://soulscodex.com/products/souls-codex">Start my reflection quiz <span aria-hidden="true">→</span></a>
         <p class="cta-note">Begin with your birth details and reflective answers.</p>
+        <p class="ps"><strong>P.S.</strong> You do not need to believe every interpretation for the Codex to be useful. Read it with curiosity, question what does not fit and keep your own judgment beside you.</p>
       </div>
     </section>
   </main>
